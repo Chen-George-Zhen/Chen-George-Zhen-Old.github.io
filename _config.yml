@@ -37,3 +37,8 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# 暂时不需要
+# sass:
+#   sass_dir: ""
+#   style: compressed
