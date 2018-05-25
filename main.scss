@@ -254,6 +254,7 @@ table td {
    * Site header
    */
 
+
 .site-header {
   border-bottom: 1px solid #e8e8e8;
   min-height: 55.95px;
@@ -261,63 +262,6 @@ table td {
     position: relative;
     margin: 0 0 70px 0;
     padding: 0;
-    .background {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 450px;
-      width: 100vw;
-      background-image: url(/backgrond.jpg);
-      background-repeat: repeat;
-      background-position: center;
-      background-size: cover;
-      &::before {
-        content: " ";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: rgba(10, 26, 103, 0.5);
-      }
-      .profile {
-        z-index: 1;
-        color: white;
-        text-shadow: #060606e3 2px 2px 1px;
-        .en-name{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin: 0 auto;
-          width: 80px;
-          height: 80px;
-          border-radius: 50%;
-          background: #ff5722;
-        }
-        .name {
-          // border: white solid 2px;
-          padding: 5px 20px;
-          margin: 10px auto;
-          font-size: 25px;
-          // box-shadow: #15111180 0px 0px 2px 2px;
-          text-align: center;
-        }
-        .job, .contact {
-          line-height: 40px;
-          text-align: center;
-        }
-        .contact {
-          display: flex;
-          .item {
-            margin: 0 10px;
-            img {
-              height: 20px;
-              width: 20px;
-            }
-          }
-        }
-      }
-    }
     .avatar {
       position: absolute;
       bottom: -60px;
@@ -327,7 +271,8 @@ table td {
       height: 120px;
       border-radius: 50%;
       border: white solid 2px;
-      background: orange
+      background: #ccc;
+      z-index: 4;
     }
   }
 }
@@ -375,3 +320,145 @@ table td {
     }
   }
 }
+
+// 头部动态背景
+@keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
+  }
+}
+@-webkit-keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
+  }
+}
+
+@-moz-keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
+  }
+}
+
+@-webkit-keyframes move-background {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+  to {
+    -webkit-transform: translate3d(1000px, 0px, 0px);
+  }
+}
+
+.background-container {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  overflow: hidden;
+  .stars {
+    background: black
+      url(/stars.png) repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    z-index: 0;
+  }
+  .twinkling {
+    width: 10000px;
+    height: 100%;
+    background: transparent
+      url(/twinkling.png)
+      repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    -moz-animation: move-background 70s linear infinite;
+    -ms-animation: move-background 70s linear infinite;
+    -o-animation: move-background 70s linear infinite;
+    -webkit-animation: move-background 70s linear infinite;
+    animation: move-background 70s linear infinite;
+  }
+  .clouds {
+    width: 10000px;
+    height: 100%;
+    background: transparent
+      url(/clouds_repeat.png)
+      repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    -moz-animation: move-background 150s linear infinite;
+    -ms-animation: move-background 150s linear infinite;
+    -o-animation: move-background 150s linear infinite;
+    -webkit-animation: move-background 150s linear infinite;
+    animation: move-background 150s linear infinite;
+  }
+  .image-wrap {
+    img {
+      height: 20vh;
+      width: 20vh;
+      position: absolute;
+      z-index: 3;
+      top: 20px;
+      right: 20px;
+    }
+  }
+  .profile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 4;
+    color: white;
+    text-shadow: #060606e3 2px 2px 1px;
+    .en-name{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #ff5722;
+    }
+    .name {
+      // border: white solid 2px;
+      padding: 5px 20px;
+      margin: 10px auto;
+      font-size: 25px;
+      // box-shadow: #15111180 0px 0px 2px 2px;
+      text-align: center;
+    }
+    .job, .contact {
+      line-height: 40px;
+      text-align: center;
+    }
+    .contact {
+      display: flex;
+      .item {
+        margin: 0 10px;
+        img {
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+  }
+}
+
