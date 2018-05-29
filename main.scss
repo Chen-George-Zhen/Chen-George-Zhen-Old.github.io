@@ -26,6 +26,11 @@ figure {
   padding: 0;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+}
+
 /**
    * Basic styling
    */
@@ -58,7 +63,6 @@ h6,
 p,
 blockquote,
 pre,
-ul,
 ol,
 dl,
 figure,
@@ -99,11 +103,6 @@ figcaption {
 /**
    * Lists
    */
-
-ul,
-ol {
-  margin-left: 30px;
-}
 
 li>ul,
 li>ol {
@@ -223,7 +222,6 @@ pre>code {
    */
 
 table {
-  margin-bottom: 30px;
   width: 100%;
   text-align: left;
   color: #3f3f3f;
@@ -238,6 +236,10 @@ table tr:nth-child(even) {
 table th,
 table td {
   padding: 10px 15px;
+}
+.collapsing {
+  width: 1px;
+  white-space: nowrap;
 }
 
 table th {
@@ -284,6 +286,7 @@ table td {
 .site-footer {
   border-top: 1px solid #e8e8e8;
   padding: 20px 0;
+  background: #2d2929f2;
 }
 
 .footer-heading {
@@ -315,9 +318,119 @@ table td {
       color: #333;
     }
     .block-content {
-      min-height: 300px;
       background: #eeeeee87;
+      border-radius: 10px;
+      padding: 10px;
+      ul.timeline {
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 50%;
+          height: 100%;
+          width: 3px;
+          background-color: #333;
+        }
+        li {
+          &.right {
+            position: relative;
+            margin-left: 50%;
+            text-align: left;
+          }
+          &.time-wrapper {
+            padding-left: 20px;
+            margin-top: 80px;
+            box-sizing: border-box;
+            .time-point {
+              position: absolute;
+              top: -10px;
+              left: -9px;
+              height: 20px;
+              width: 20px;
+              background-color: #fff;
+              border: 1px solid #333;
+              border-radius: 50%;
+              box-sizing: border-box;
+              .time-point-black {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 10px;
+                width: 10px;
+                background-color: #333;
+                border-radius: 50%;
+              }
+            }
+            .time-span {
+              position: relative;
+              top: -15px;
+              display: inline-block;
+              background: #333;
+              text-align: center;
+              height: 30px;
+              line-height: 30px;
+              width: 80px;
+              color: #fff;
+              border-radius: 16px;
+            }
+          }
+          &.left {
+            position: relative;
+            text-align: right;
+            width: 50%;
+          }
+          .info-div {
+            position: relative;
+            display: inline-block;
+            max-width: 70%;
+            padding-right: 40px;
+            padding-left: 40px;
+            text-align: left;
+            border-bottom: 2px solid #333;
+            .title {
+              color: black;
+              text-align: center;
+              font-weight: bold;
+            }
+            p {
+              color: #888;
+              font-size: 14px;
+              text-align: justify;
+            }
+          }
+          .point-left {
+            position: absolute;
+            left: -7px;
+            bottom: -7px;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border: 1px solid #333;
+            border-radius: 50%;
+          }
+          .point-right {
+            position: absolute;
+            right: -7px;
+            bottom: -7px;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border: 1px solid #333;
+            border-radius: 50%;
+          }
+        }
+      }
+      table {
+        th {
+          text-align: right;
+        }
+      }
     }
+  }
+  .bio {
+    text-indent: 2em;
   }
 }
 
