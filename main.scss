@@ -286,7 +286,9 @@ table td {
 .site-footer {
   border-top: 1px solid #e8e8e8;
   padding: 20px 0;
-  background: #2d2929f2;
+  // background: #2d2929f2;
+  // background: white;
+
 }
 
 .footer-heading {
@@ -297,6 +299,7 @@ table td {
   font-size: 15px;
   color: #828282;
   margin-left: -15px;
+  // background: white;
 }
 
 @media screen and (max-width: 800px) {}
