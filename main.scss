@@ -271,6 +271,7 @@ table td {
       background: #ccc;
       z-index: 4;
       overflow: hidden;
+      box-shadow: #15111180 4px 4px 14px 2px;
     }
   }
 }
@@ -324,6 +325,7 @@ table td {
       background: #eeeeee87;
       border-radius: 10px;
       padding: 10px;
+      box-shadow: #15111180 4px 4px 14px 2px;
       ul.timeline {
         position: relative;
         &::before {
