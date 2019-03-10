@@ -188,22 +188,17 @@ pre>code {
    * Wrapper
    */
 
-.wrapper {
-  max-width: -webkit-calc(800px - (30px * 2));
-  max-width: calc(800px - (30px * 2));
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 30px;
-  padding-left: 30px;
+p {
+  margin-bottom: 5px;
+  a {
+    word-break: break-all;
+  }
 }
 
-@media screen and (max-width: 800px) {
-  .wrapper {
-    max-width: -webkit-calc(800px - (30px));
-    max-width: calc(800px - (30px));
-    padding-right: 15px;
-    padding-left: 15px;
-  }
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 
 /**
@@ -275,6 +270,7 @@ table td {
       border: white solid 2px;
       background: #ccc;
       z-index: 4;
+      overflow: hidden;
     }
   }
 }
@@ -298,8 +294,12 @@ table td {
 .footer-col-wrapper {
   font-size: 15px;
   color: #828282;
-  margin-left: -15px;
+  width: 100%;
   // background: white;
+  #scratch {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (max-width: 800px) {}
